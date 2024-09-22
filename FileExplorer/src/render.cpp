@@ -77,7 +77,15 @@ void WindowClass::DrawActions()
     else if (fs::is_regular_file(selectedEntry))
         ImGui::Text("Selected file %s", selectedEntry.string().c_str());
     else
-        ImGui::Text("Nothing selected");
+    {
+        ImGui::Text("Selected file n/a");
+        ImGui::PushStyleVar(ImGuiStyleVar_Alpha,
+                            ImGui::GetStyle().Alpha * 0.0f);
+        ImGui::Button("No clickablr button");
+        ImGui::PopStyleVar();
+        return;
+    }
+
 
     if (fs::is_regular_file(selectedEntry) && ImGui::Button("Open"))
         openFileWithDefaultApplication();
