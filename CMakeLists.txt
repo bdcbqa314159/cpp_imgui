@@ -40,3 +40,4 @@ find_package(implot CONFIG REQUIRED)
 find_package(OpenGL REQUIRED)
 
 add_subdirectory(ImGuiHelloWorld)
+add_subdirectory(FileExplorer)
